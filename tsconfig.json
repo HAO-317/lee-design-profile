@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ESNext",                                  /* Use modern JavaScript version for emitted code */
+    "module": "ESNext",                                  /* Use ES modules for compatibility with Vite */
+    "moduleResolution": "node",                          /* Use Node.js-style module resolution */
+    "jsx": "react-jsx",                                  /* Enable JSX support for React 18+ */
+    "esModuleInterop": true,                             /* Enable interoperability with CommonJS modules */
+    "forceConsistentCasingInFileNames": true,            /* Ensure consistent casing in imports */
+    "strict": true,                                      /* Enable strict type-checking */
+    "skipLibCheck": true,                                /* Skip type checking of declaration files */
+    "baseUrl": "src",                                    /* Set base directory for module resolution */
+    "paths": {                                           /* Simplify imports with aliases */
+      "@/*": ["*"]
+    },
+    "resolveJsonModule": true                            /* Enable importing JSON files (for projects.json) */
+  },
+  "include": ["src/**/*"],                               /* Compile all files in src directory */
+  "exclude": ["node_modules", "dist"]                    /* Exclude node_modules and build output */
+}
