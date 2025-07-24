@@ -63,7 +63,7 @@ h2, h3, h4, ul, li, p, a {
 }
 
 .header-content {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 1rem 1.25rem;
   display: flex;
@@ -144,7 +144,7 @@ h2, h3, h4, ul, li, p, a {
 
 .main-content {
   flex: 1;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 2rem 1.25rem;
 }
@@ -181,7 +181,7 @@ h2, h3, h4, ul, li, p, a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(33, 216, 223, 0.8);
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 1rem;
   border-radius: 0.5rem;
   text-align: center;
@@ -257,22 +257,19 @@ h2, h3, h4, ul, li, p, a {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
-@media (min-width: 1024px) {
-  .project-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+
 
 .project-card {
   background-color: white;
   border: 1px solid #d1d5db;
   cursor: pointer;
   transition: box-shadow 0.2s;
+  border-radius: 0.375rem;
 }
 
 .project-card:hover {
@@ -282,6 +279,7 @@ h2, h3, h4, ul, li, p, a {
 .project-image {
   aspect-ratio: 3 / 2;
   overflow: hidden;
+  background-color: #666666;
 }
 
 .project-image-content {
@@ -448,14 +446,15 @@ h2, h3, h4, ul, li, p, a {
 }
 
 .modal-content {
-  background-color: rgba(255, 255, 255, 0.932);
+  background-color: rgba(255, 255, 255, 0.95);
   width: 80%;
-  max-width: 1080px;
+  max-width: 1440px;
   height: auto;
+  max-height: 85vh;
   overflow: auto;
   border-radius: 0.75rem;
   position: center;
-  padding: 3rem 1.5rem;
+  padding: 3rem 5rem;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -465,8 +464,8 @@ h2, h3, h4, ul, li, p, a {
 .modal-close {
   position: absolute;
   top: 1rem;
-  left: 1rem;
-  font-size: 1.5rem;
+  right: 1rem;
+  font-size: 2rem;
   color: #6b7280;
   background: none;
   border: none;
@@ -480,8 +479,8 @@ h2, h3, h4, ul, li, p, a {
 .modal-back {
   position: absolute;
   top: 1rem;
-  right: 1rem;
-  font-size: 1.25rem;
+  left: 1rem;
+  font-size: 2rem;
   color: #6b7280;
   background: none;
   border: none;
@@ -494,6 +493,7 @@ h2, h3, h4, ul, li, p, a {
 
 .modal-image-section {
   margin-bottom: 1.5rem;
+
 }
 
 .modal-image-gallery {
@@ -504,16 +504,18 @@ h2, h3, h4, ul, li, p, a {
 
 .modal-image-large {
   width: 100%;
+  border-radius: 0.375rem;
+  padding: 10px 0px;
+  background-color: #666666;
 }
 
 .modal-image-large-content {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
-  max-height: 720px;
+  max-height: 640px;
   object-fit: contain;
-  border-radius: 0.375rem;
-  background-color: #374151;
+
 }
 
 .modal-image-thumbnails {
@@ -522,16 +524,17 @@ h2, h3, h4, ul, li, p, a {
   flex-direction: row;
   gap: 0.5rem;
   overflow-y: auto;
-  max-height: 160px;
+  max-height: 120px;
 }
 
 .modal-image-thumbnail {
-  width: 200px;
+  width: 160px;
   height: auto;
   object-fit: cover;
   border-radius: 0.375rem;
   cursor: pointer;
   border: 2px solid transparent;
+    background-color: #666666;
 }
 
 .modal-image-thumbnail-active {
@@ -540,10 +543,10 @@ h2, h3, h4, ul, li, p, a {
 
 .modal-image-single {
   width: 100%;
-  height: auto;
-  max-height: 400px;
   object-fit: contain;
+  background-color: #666666;
   border-radius: 0.375rem;
+  padding: 10px 0px;
 }
 
 .modal-info {
@@ -560,7 +563,7 @@ h2, h3, h4, ul, li, p, a {
 .modal-year,
 .modal-location {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #1f2937;
 }
 
 .modal-role,
@@ -603,6 +606,25 @@ h2, h3, h4, ul, li, p, a {
   padding: 2rem;
   border-radius: 0.5rem;
   background-color: rgb(182, 182, 182);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/assets/image/bg_home2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 0.5rem;
+  width: 100%;
+
 }
 
 .contact-title {
@@ -610,14 +632,17 @@ h2, h3, h4, ul, li, p, a {
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 1rem;
+    text-align: center;
 }
 
 .contact-text {
   color: #374151;
   margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .contact-details {
+  width: 30%;
   display: flex;
   flex-direction: column;
   gap: 1rem;

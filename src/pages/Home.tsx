@@ -7,7 +7,7 @@ const Home = () => {
       className="home-container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.7 }}
     >
       <div className="home-content">
         <h1 className="home-title">Welcome to my DESIGN WORLD</h1>

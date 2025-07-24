@@ -9,30 +9,33 @@ const Contact = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <h1 className="contact-title">Kontakt</h1>
-      <p className="contact-text">
-        Sie können mich jederzeit per E-Mail kontaktieren. Ich freue mich auf Ihre Nachricht!
-      </p>
-      <div className="contact-details">
-        <p>
-          ✉️ E-Mail: 
-          <a href="mailto:your.email@example.com" className="contact-link">
-            your.email@example.com
-          </a>
+      <div className="contact-section">
+        <h2 className="contact-title">Kontakt</h2>
+        <p className="contact-text">
+          Sie können mich jederzeit per E-Mail kontaktieren. Ich freue mich auf Ihre Nachricht!
         </p>
-        <p>
-          💻 GitHub: 
-          <a
-            href="https://github.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-link"
-          >
-            github.com/yourusername
-          </a>
-        </p>
-        <p>📍 Standort: Düsseldorf/Erkrath, Deutschland</p>
+        <div className="contact-details">
+          <p>
+            ✉️ E-Mail: 
+            <a href="mailto:your.email@example.com" className="contact-link">
+              lihao317@gmail.com
+            </a>
+          </p>
+          <p>
+            💻 GitHub: 
+            <a
+              href="https://github.com/HAO-317"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              github.com/HAO-317
+            </a>
+          </p>
+          <p>📍 Standort: Düsseldorf/Erkrath, Deutschland</p>
+        </div>
       </div>
+
     </motion.section>
   );
 };

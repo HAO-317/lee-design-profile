@@ -27,7 +27,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
         />
       </div>
       <div className="project-info">
-        <h3 className="project-title-text">Title: {project.title}</h3>
+        <h3 className="project-title-text">{project.title}</h3>
         <p className="project-client-text">Client: {project.client}</p>
         <div className="project-tags">
           <span className="project-tags-label">Tags: </span>

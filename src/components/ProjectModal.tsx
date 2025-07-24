@@ -62,16 +62,19 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               </div>
             </div>
           ) : (
-            <img
-              src={`/assets/image/${project.printImage}`}
-              alt="Großansicht"
-              className="modal-image-single"
-            />
+            <div className="modal-image-single">
+              <img
+                src={`/assets/image/${project.images}`}
+                alt="Großansicht"
+                className="modal-image-large-content"
+              />
+            </div>
+
           )}
         </div>
 
         <div className="modal-info">
-          <p className="modal-title">Title: {project.title}</p>
+          <p className="modal-title">{project.title}</p>
           <p className="modal-client">Client: {project.client}</p>
           <p className="modal-year">Year: {project.year}</p>
           <p className="modal-location">Location: {project.location || "N/A"}</p>
