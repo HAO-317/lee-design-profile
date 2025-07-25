@@ -1,107 +1,126 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import webProjects from "../data/web-projects.json";
 
 interface WebProject {
   id: string;
   title: string;
-  description: string;
-  techStack: string[];
+  type: string;
+  format: string;
+  tasks: string[];
+  tools: string[];
   features: string[];
-  screenshots: string[];
-  demoUrl: string;
-  githubUrl: string;
+  images: string[];
+  description: string;
+  demo: string;
+  github: string;
 }
 
-const tempData: WebProject[] = [
-  {
-    id: "web1",
-    title: "Portfolio Website",
-    description: "Ein modernes Portfolio für Design- und Entwicklungsprojekte.",
-    techStack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    features: ["Responsives Design", "Projektfilter", "Modale Ansicht"],
-    screenshots: ["portfolio_screenshot_1.jpg", "portfolio_screenshot_2.jpg"],
-    demoUrl: "https://example.com/demo1",
-    githubUrl: "https://github.com/yourusername/portfolio",
-  },
-  {
-    id: "web2",
-    title: "E-Commerce Plattform",
-    description: "Eine skalierbare E-Commerce-Lösung mit Warenkorb und Zahlungsabwicklung.",
-    techStack: ["React", "Node.js", "Express", "MongoDB"],
-    features: ["Produktkatalog", "Warenkorb", "Zahlungs-Gateway"],
-    screenshots: ["ecommerce_screenshot_1.jpg", "ecommerce_screenshot_2.jpg", "ecommerce_screenshot_3.jpg"],
-    demoUrl: "https://example.com/demo2",
-    githubUrl: "https://github.com/yourusername/ecommerce",
-  },
-];
-
 const ProjectsWD = () => {
-  const [projects] = useState<WebProject[]>(tempData);
+  const [projects] = useState<WebProject[]>(webProjects);
 
   return (
     <div className="app-container">
       <Navbar />
       <main className="main-content">
-        <section className="projects-web-container">
-          <h1 className="projects-title">Web & Interaktiv</h1>
-          <div className="projects-list">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="project-card"
-              >
-                <div className="project-content">
-                  <div className="project-images">
-                    {project.screenshots.map((screenshot, index) => (
-                      <img
-                        key={index}
-                        src={`/assets/image/${screenshot}`}
-                        alt={`${project.title} Screenshot ${index + 1}`}
-                        className="project-image"
-                      />
-                    ))}
-                  </div>
-                  <div className="project-details">
-                    <h3 className="project-title-text">{project.title}</h3>
-                    <p className="project-description">{project.description}</p>
-                    <div className="project-tech">
-                      <h4 className="project-subtitle">Technologien</h4>
-                      <ul className="project-list">
-                        {project.techStack.map((tech, index) => (
-                          <li key={index}>{tech}</li>
-                        ))}
-                      </ul>
+        <section className="wd-projects-container">
+          <h1 className="wd-projects-title">Web & Interaktiv</h1>
+          <div className="wd-projects-list">
+            {projects.map((project) => {
+              const isAFormat = project.id === "toktok1"; // Example: toktok1 uses A format
+              const CardComponent = isAFormat ? "wd-project-card-a" : "wd-project-card-b";
+              const ContentComponent = isAFormat ? "wd-project-content-a" : "wd-project-content-b";
+              const TextComponent = isAFormat ? "wd-project-text-a" : "wd-project-text-b";
+              const ImagesComponent = isAFormat ? "wd-project-images-a" : "wd-project-images-b";
+              const ImageClass = isAFormat ? "wd-project-image-a" : "wd-project-image-b";
+
+              return (
+                <div key={project.id} className={CardComponent}>
+                  <div className={ContentComponent}>
+                    <div className={TextComponent}>
+                      <h3 className="wd-project-title">{project.title}</h3>
+                      <div className="wd-project-type">
+                        <h4 className="wd-project-subtitle">Typ</h4>
+                        <p>{project.type}</p>
+                      </div>
+                      <div className="wd-project-format">
+                        <h4 className="wd-project-subtitle">Format</h4>
+                        <p>{project.format}</p>
+                      </div>
+                      <div className="wd-project-description">
+                        <h4 className="wd-project-desc-title">Beschreibung</h4>
+                        <p className="wd-project-desc-content">{project.description}</p>
+                      </div>
+                      <div style={{ display: "flex", gap: "0.5rem" }}>
+                        <div className="wd-project-tasks">
+                          <h4 className="wd-project-subtitle">Aufgaben</h4>
+                          <ul className="wd-project-list">
+                            {project.tasks.map((task, index) => (
+                              <li key={index}>{task}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="wd-project-tech">
+                          <h4 className="wd-project-subtitle">Technologien</h4>
+                          <ul className="wd-project-list">
+                            {project.tools.map((tech, index) => (
+                              <li key={index}>{tech}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="wd-project-features">
+                          <h4 className="wd-project-subtitle">Funktionen</h4>
+                          <ul className="wd-project-list">
+                            {project.features.map((feature, index) => (
+                              <li key={index}>{feature}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="wd-project-links">
+                        {project.demo && (
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="wd-project-link"
+                          >
+                            {project.demo}
+                          </a>
+                        )}
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="wd-project-link"
+                          >
+                            {project.github}
+                          </a>
+                        )}
+                      </div>
+                      {project.id === "supertimer01" && (
+                        <iframe
+                          src="https://hao-317.github.io/Project_SuperTimer/"
+                          className="wd-project-embed"
+                          title="SuperTimer Embed"
+                        ></iframe>
+                      )}
                     </div>
-                    <div className="project-features">
-                      <h4 className="project-subtitle">Funktionen</h4>
-                      <ul className="project-list">
-                        {project.features.map((feature, index) => (
-                          <li key={index}>{feature}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="project-links">
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project-link"
-                      >
-                        Demo
-                      </a>
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project-link"
-                      >
-                        GitHub
-                      </a>
+                    <div className={ImagesComponent}>
+                      {project.images.map((screenshot, index) => (
+                        <img
+                          key={index}
+                          src={`/assets/image/${screenshot}`}
+                          alt={`${project.title} Screenshot ${index + 1}`}
+                          className={ImageClass}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       </main>
