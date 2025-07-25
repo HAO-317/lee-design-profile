@@ -81,7 +81,7 @@ const ProjectsCD = () => {
       <main className="main-content">
         <ErrorBoundary>
           <section className="projects-container-cd">
-            <h1 className="projects-title">Kommunikation & Raum</h1>
+            <h2 className="projects-title">Kommunikation & Raum</h2>
             <FilterBar
               filters={roleOptions}
               selected={selectedTags}
