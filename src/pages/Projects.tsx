@@ -13,7 +13,7 @@ const Projects = () => {
       <h2 className="projects-title">Bitte wählen Sie ein Design-Welt</h2>
       <div className="home-buttons">
         <Link to="/projects" className="home-button">
-          Kommunikation & Raum
+          Kommunikation Design & Markenraum
         </Link>
         <Link to="/projects-web" className="home-button">
           Web & Interaktiv
