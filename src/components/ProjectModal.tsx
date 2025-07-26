@@ -33,10 +33,18 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     <div className="modal-overlay">
       <div className="modal-content">
         <button className="modal-close" onClick={onClose}>
-          X
+          <img
+            src="/assets/image/icon_close.svg"
+            alt="Close"
+            className="modal-icon"
+          />
         </button>
         <button className="modal-back" onClick={onClose}>
-          &lt;
+          <img
+            src="/assets/image/icon_left.svg"
+            alt="Back"
+            className="modal-icon"
+          />
         </button>
 
         <div className="modal-image-section">
@@ -69,7 +77,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 className="modal-image-large-content"
               />
             </div>
-
           )}
         </div>
 

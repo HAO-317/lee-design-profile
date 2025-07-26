@@ -7,28 +7,30 @@ type FilterBarProps = {
   activeClass?: string;
 };
 
-const FilterBar = ({ filters, selected, onToggle, label, className = "", activeClass = "" }: FilterBarProps) => {
+const FilterBar = ({ filters, selected, onToggle, label, className = "", activeClass = "active" }: FilterBarProps) => {
   return (
-    <div className={`filter-container ${className}`}>
-      <h3 className="filter-label">{label}</h3>
-      <div className="filter-buttons">
-        <button
-          onClick={() => onToggle("ALLE")}
-          className={`filter-button ${selected.includes("ALLE") ? activeClass : ""}`}
-        >
-          ALLE
-        </button>
-        {filters.map((filter) => (
+
+      <div className={`filter-container ${className}`}>
+        <h3 className="filter-label">{label}</h3>
+        <div className="filter-buttons">
           <button
-            key={filter}
-            onClick={() => onToggle(filter)}
-            className={`filter-button ${selected.includes(filter) ? activeClass : ""}`}
+            onClick={() => onToggle("ALLE")}
+            className={`filter-button ${selected.includes("ALLE") ? activeClass : ""}`}
           >
-            {filter}
+            ALLE
           </button>
-        ))}
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => onToggle(filter)}
+              className={`filter-button ${selected.includes(filter) ? activeClass : ""}`}
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
+
   );
 };
 

@@ -1,5 +1,12 @@
-<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#666666;}
+</style>
 <g id="close">
-<path id="Vector" d="M26 2.61857L23.3814 0L13 10.3814L2.61857 0L0 2.61857L10.3814 13L0 23.3814L2.61857 26L13 15.6186L23.3814 26L26 23.3814L15.6186 13L26 2.61857Z" fill="white"/>
+	<path id="Vector" class="st0" d="M26,2.6L23.4,0L13,10.4L2.6,0L0,2.6L10.4,13L0,23.4L2.6,26L13,15.6L23.4,26l2.6-2.6L15.6,13
+		L26,2.6z"/>
 </g>
 </svg>
