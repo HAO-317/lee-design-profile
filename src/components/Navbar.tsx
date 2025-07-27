@@ -75,7 +75,7 @@ const Navbar = () => {
                     className="dropdown-item"
                     onClick={() => setIsNavOpen(false)}
                   >
-                    Kommunikation Design & Raum
+                    Kommunikation Design & Markenraum
                   </Link>
                   <Link
                     to="/projects-web"

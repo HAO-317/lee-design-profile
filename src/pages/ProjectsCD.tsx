@@ -40,6 +40,7 @@ const ProjectsCD = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>(["ALLE"]);
   const [modalProject, setModalProject] = useState<Project | null>(null);
   const [showNoResult, setShowNoResult] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const toggleTag = (tag: string) => {
     if (tag === "ALLE") {
@@ -75,13 +76,26 @@ const ProjectsCD = () => {
   const roleOptions = useMemo(() => allTags(projects, "role"), [projects]);
   const tasksOptions = useMemo(() => allTags(projects, "tasks"), [projects]);
 
+  // 滚动事件处理
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 100);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="app-container">
       <Navbar />
       <main className="main-content">
         <ErrorBoundary>
           <section className="projects-container-cd">
-            <h2 className="projects-title">Kommunikation & Raum</h2>
+            <h2 className="projects-title">Kommunikation Design & Markenraum</h2>
             <FilterBar
               filters={roleOptions}
               selected={selectedTags}
@@ -136,6 +150,15 @@ const ProjectsCD = () => {
       <footer className="app-footer">
         © 2025 H.LEE Design
       </footer>
+      {isVisible && (
+        <button className="scroll-to-top" onClick={scrollToTop}>
+          <img
+            src="/assets/image/icon_up-to-line.svg"
+            alt="Back to Top"
+            className="menu-icon"
+          />
+        </button>
+      )}
     </div>
   );
 };

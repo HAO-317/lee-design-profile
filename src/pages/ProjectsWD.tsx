@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import webProjects from "../data/web-projects.json";
 
@@ -18,6 +18,20 @@ interface WebProject {
 
 const ProjectsWD = () => {
   const [projects] = useState<WebProject[]>(webProjects);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // 滚动事件处理
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 100);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="app-container">
@@ -234,13 +248,11 @@ const ProjectsWD = () => {
                             </div>
                           )}
                         </div>
-
                       </div>
                     </>
                   )}
                   {index === 7 && (
                     <div className="wd-project-embed-container">
-
                       <iframe
                         src="https://hao-317.github.io/Project_SuperTimer/"
                         className="wd-project-embed"
@@ -258,6 +270,15 @@ const ProjectsWD = () => {
       <footer className="app-footer">
         © 2025 H.LEE Design
       </footer>
+      {isVisible && (
+        <button className="scroll-to-top" onClick={scrollToTop}>
+          <img
+            src="/assets/image/icon_up-to-line.svg"
+            alt="Back to Top"
+            className="menu-icon"
+          />
+        </button>
+      )}
     </div>
   );
 };
