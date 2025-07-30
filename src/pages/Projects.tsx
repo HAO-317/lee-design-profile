@@ -10,14 +10,20 @@ const Projects = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="projects-title">Bitte wählen Sie ein Design-Welt</h2>
+      <h2 className="projects-title">Wähle deinen Weg und tauche ein in eine Welt des Designs</h2>
       <div className="home-buttons">
-        <Link to="/projects" className="home-button">
+        <div className="home-button-container1">
+          <Link to="/projects" className="home-button">
           Kommunikation Design & Markenraum
         </Link>
-        <Link to="/projects-web" className="home-button">
-          Web & Interaktiv
+        </div>
+        <div className="home-button-container2">
+          <Link to="/projects-web" className="home-button">
+          Web & Interaktive
         </Link>
+        </div>
+
+
       </div>
    
     

@@ -26,19 +26,22 @@ const About = () => {
         <div className="about-specializations">
           <h3 className="about-subtitle">Spezialisierungen</h3>
           <ul className="about-list">
+            <li>CIS (Corporate Identity)/VIS (Visual Identity)</li>
             <li>Markenraum</li>
             <li>UI/UX Design</li>
-            <li>Frontend & Backend Development (Html, CSS, React, TypeScript, Vite, Node, Git)</li>
+            <li>Frontend & Backend Development (Html, CSS, React, TypeScript, Vite, Node, Git / GitHub, Vercel, Netlify, Chrome DevTools)</li>
             <li>Agile Arbeitsmethoden</li>
           </ul>
         </div>
         <div>
           <h3 className="about-subtitle">Tools</h3>
           <ul className="about-list">
+            <li>Notion</li>
             <li>Figma</li>
             <li>VS Code</li>
             <li>Adobe CC Suite</li>
             <li>Cinema 4D</li>
+            <li>Auto CAD</li>
           </ul>
         </div>
       </div>

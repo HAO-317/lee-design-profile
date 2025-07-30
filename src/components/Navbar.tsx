@@ -41,6 +41,11 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const handlePrintClick = () => {
+    window.open('/assets/pdf/lee_design_portfolio_v251.pdf', '_blank');
+    setIsNavOpen(false); // 跳转后收起 navbar
+  };
+
   return (
     <header className="app-header">
       <div className="header-content">
@@ -99,13 +104,16 @@ const Navbar = () => {
             >
               Kontakt
             </button>
-            <Link to="/print" className="nav-button print-icon">
+            <button
+              className="nav-button print-icon"
+              onClick={handlePrintClick}
+            >
               <img
                 src="/assets/image/icon_printer.svg"
                 alt="Print"
                 className="print-icon-image"
               />
-            </Link>
+            </button>
           </nav>
           <button
             className={`menu-toggle ${isNavOpen ? "menu-toggle-active" : ""}`}

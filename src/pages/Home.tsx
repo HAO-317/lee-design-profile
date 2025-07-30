@@ -10,8 +10,11 @@ const Home = () => {
       transition={{ duration: 0.7 }}
     >
       <div className="home-content">
-        <h1 className="home-title">Welcome to my DESIGN WORLD</h1>
-        <h2 className="home-subtitle">25 Jahre spannende und umfangreiche professionelle Gestaltung</h2>
+        <h1 className="home-title">Welcome to my DESIGN WORLD
+          <br />
+          Willkommen in meiner DESIGN-WELT
+        </h1>
+        <h2 className="home-subtitle">Seit über 20 Jahren surfe ich durch die weite und lebendige Welt des Designs</h2>
       </div>
     </motion.section>
   );

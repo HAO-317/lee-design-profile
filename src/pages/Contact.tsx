@@ -10,19 +10,19 @@ const Contact = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="contact-section">
-        <h2 className="contact-title">Kontakt</h2>
+        <h2 className="contact-title">Bist du bereit, mit mir die nächste Herausforderung anzunehmen?</h2>
         <p className="contact-text">
           Sie können mich jederzeit per E-Mail kontaktieren. Ich freue mich auf Ihre Nachricht!
         </p>
         <div className="contact-details">
           <p>
-            ✉️ E-Mail: 
+            ✉️ E-Mail:&nbsp;  
             <a href="mailto:your.email@example.com" className="contact-link">
               lihao317@gmail.com
             </a>
           </p>
           <p>
-            💻 GitHub: 
+            💻 GitHub:&nbsp; 
             <a
               href="https://github.com/HAO-317"
               target="_blank"

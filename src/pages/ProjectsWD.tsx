@@ -38,7 +38,7 @@ const ProjectsWD = () => {
       <Navbar />
       <main className="main-content">
         <section className="wd-projects-container">
-          <h1 className="wd-projects-title">Web & Interaktiv</h1>
+          <h1 className="wd-projects-title">Web & Interaktive</h1>
           <div className="wd-projects-list">
             {projects.map((project, index) => (
               <div key={project.id} className="wd-project-card-a">
@@ -69,7 +69,7 @@ const ProjectsWD = () => {
                             </ul>
                           </div>
                           <div className="wd-project-tech">
-                            <h4 className="wd-project-subtitle">Technologien</h4>
+                            <h4 className="wd-project-subtitle">Technology Stack</h4>
                             <ul className="wd-project-list">
                               {project.tools.map((tech, idx) => (
                                 <li key={idx}>{tech}</li>
@@ -77,7 +77,7 @@ const ProjectsWD = () => {
                             </ul>
                           </div>
                           <div className="wd-project-features">
-                            <h4 className="wd-project-subtitle">Funktionen</h4>
+                            <h4 className="wd-project-subtitle">Features</h4>
                             <ul className="wd-project-list">
                               {project.features.map((feature, idx) => (
                                 <li key={idx}>{feature}</li>
